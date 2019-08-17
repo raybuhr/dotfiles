@@ -1,2 +1,3 @@
-# vim_dotfiles
-my person vim config
+# dotfiles
+
+my personal linux config files
