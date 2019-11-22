@@ -51,6 +51,12 @@ call plug#begin('~/.vim/bundle')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'sjl/gundo.vim'
 Plug 'valloric/youcompleteme'
-
+Plug 'lifepillar/vim-gruvbox8'
+Plug 'godlygeek/csapprox'
 " Initialize plugin system
 call plug#end()
+
+" set colorscheme
+set t_Co=256
+set background=dark
+colorscheme gruvbox8
