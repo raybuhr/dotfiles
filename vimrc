@@ -53,6 +53,7 @@ Plug 'sjl/gundo.vim'
 Plug 'valloric/youcompleteme'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'godlygeek/csapprox'
+Plug 'benmills/vimux'
 " Initialize plugin system
 call plug#end()
 
@@ -60,3 +61,22 @@ call plug#end()
 set t_Co=256
 set background=dark
 colorscheme gruvbox8
+
+" Clear Whitespace
+function! Trim()
+    %s/\s*$//
+        ''
+    endfunction
+command! -nargs=0 Trim :call Trim()
+nnoremap <silent> <Leader>cw :Trim<CR>
+
+" Vimux
+let g:VimuxUseNearestPane = 1
+map <silent> <LocalLeader>vl :wa<CR> :VimuxRunLastCommand<CR>
+map <silent> <LocalLeader>vi :wa<CR> :VimuxInspectRunner<CR>
+map <silent> <LocalLeader>vk :wa<CR> :VimuxInterruptRunner<CR>
+map <silent> <LocalLeader>vx :wa<CR> :VimuxClosePanes<CR>
+map <silent> <LocalLeader>vp :VimuxPromptCommand<CR>
+vmap <silent> <LocalLeader>vs "vy :call VimuxRunCommand(@v)<CR>
+nmap <silent> <LocalLeader>vs vip<LocalLeader>vs<CR>
+map <silent> <LocalLeader>ds :call VimuxRunCommand('clear; grep -E "^ *describe[ \(]\|^ *context[ \(]\|^ *it[ \(]" ' . bufname("%"))<CR>
