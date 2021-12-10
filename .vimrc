@@ -10,7 +10,7 @@ set visualbell			" Use visual bell (no beeping)
 set hlsearch			" Highlight all search results
 set smartcase			" Enable smart-case search
 set ignorecase			" Always case-insensitive
-set incsearch			" Searches for strings incrementally 
+set incsearch			" Searches for strings incrementally
 set autoindent			" Auto-indent new lines
 set shiftwidth=4		" Number of auto-indent spaces
 set smartindent			" Enable smart-indent
@@ -18,7 +18,7 @@ set smarttab			" Enable smart-tabs
 set tabstop=4       		" number of visual spaces per TAB
 set softtabstop=4		" Number of spaces per Tab
 set expandtab			" Use spaces instead of tabs
-set ruler			" Show row and column ruler information 
+set ruler			" Show row and column ruler information
 set undolevels=1000		" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
@@ -50,10 +50,10 @@ call plug#begin('~/.vim/bundle')
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'sjl/gundo.vim'
-Plug 'valloric/youcompleteme'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'godlygeek/csapprox'
 Plug 'benmills/vimux'
+Plug 'sheerun/vim-polyglot'
 " Initialize plugin system
 call plug#end()
 
